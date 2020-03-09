@@ -6,3 +6,4 @@ install.packages("dplyr")#pacote de manipulação de dados
 install.packages("devtools")#permites instalação de pacote
 
 library(ggplot2) #diz ao r que é pra usar o pacote ggplot2
+detach(package:ggplot2) #descarrega o pacote ou seja, o mesmo não pode ser mais utilizado nessa sessão

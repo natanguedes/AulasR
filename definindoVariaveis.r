@@ -34,3 +34,14 @@ x <- c(1,2,3)
 x
 c(1,2,3)-> x
 x
+assign("x", c(6.3,4,-2))
+x
+
+#verificando o valor da primeira posição
+x[1] #imprime a posição 1
+
+#verificar objetos
+ls()
+objects()
+rm(x)  
+x

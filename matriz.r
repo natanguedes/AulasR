@@ -24,4 +24,4 @@ matrix(data = dados, nrow = 5 ,ncol = 2 )
 
 mat =   matrix(c(2,3,4,5), nr = 2)
 mat
-mat[1,2]
+mat[1,2] #parou em 05:13 Matrizes, Operações com Matrizes e Matrizes Nomeados - Parte 1/2 08:57

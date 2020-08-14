@@ -47,9 +47,11 @@ logic
 
 composta = list("A",1,TRUE)
 composta
+composta2[2][1]="teste"
 
-composta2 = list(1:10,c("Skank","capital inicial","Perlla",rnorm(10)))
-composta2
-
-composta2[2][1] = "Skank2"
+composta2 = list(1:10,c("Skank2","capital inicial","Perlla",rnorm(10)))
+composta2[1]
+composta2[2]
+composta2[2][1]
+composta2[2][1] ="monica"
 composta2

@@ -44,7 +44,33 @@ strsplit("ESSA EH A PRIMEIRA PARTE DA STRING, AQUI CONTINUA MAS SERÁ TRANSFORMA
 STR1 = c("EU AMO O R  ","NA ESTATISTICA")
 STR1
 STR2 = c("E O PYTHON"," TAMBEM  ")
-
+#concatenar
 str_c(STR1,STR2)
 
 str_c(c(STR2,STR1), sep="")
+
+library(stringr)
+?strsplit
+#contagem de caracter
+str_count(texto, "s")
+#quantas vezes  aparece o s
+str_locate_all(texto,"s")
+#SUBSTITUIR A PRIMEIRA OCORRENCIA
+str_replace(STR2,"\\s","")
+#SUBSTITUIR TODAS AS OCORRENCIAS
+
+str_replace_all(STR2, "\\s", "")
+str_locate_all(STR1,"AMO")
+
+"detectando padrões em string"  
+str1="17 janeiro 2001" 
+str2 = "1 jan 2001"
+padrao = "jan 20"
+grep(pattern = padrao, x = str1)
+tr = "1 jan20"
+padrao = "jan20"
+  
+grep(pattern = padrao, x =  str1)  
+  #nao existe retorna 0
+grep(pattern = padrao, x = tr)
+

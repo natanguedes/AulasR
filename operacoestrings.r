@@ -69,8 +69,9 @@ padrao = "jan 20"
 grep(pattern = padrao, x = str1)
 tr = "1 jan20"
 padrao = "jan20"
-  
+
+#nao existe retorna 0
 grep(pattern = padrao, x =  str1)  
-  #nao existe retorna 0
+  #existe retorna 1
 grep(pattern = padrao, x = tr)
 

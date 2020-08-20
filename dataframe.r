@@ -57,7 +57,7 @@ tail(pesq)
 #filtro para um subset de dados que 
 
 pesq[altura < 1.60,]
-pesq[altura>1.60]
+pesq[altura>1.60, c("Código","Nome")]
 pesq
 ?mtcars
 mtcars
@@ -72,3 +72,5 @@ pesq
 #nomear linhas
 rownames(pesq)<- c("obs1", "obs2","obs3","obs4","obs5")
 pesq
+
+

@@ -92,11 +92,11 @@ paciente$ID
 summary(paciente)
 #Histograma 
 idade = as.numeric(paciente$ID) 
-hist(idade)
- A
+hist(idade,border = "blue", col = "pink")
+ ?hist
 ?summary
 factor(paciente)
 #combinando dataset
 d= merge(pesq,paciente)
 d
-paciente$ID.Nome 
+View( d)

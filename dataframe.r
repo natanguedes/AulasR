@@ -1,6 +1,10 @@
 getwd()
 #criando dataframe vazio
 
+install.packages("pastecs")
+library(pastecs)
+stat.desc(pesq) 
+
 dataframe = data.frame()
 class(dataframe)
 dataframe
@@ -73,4 +77,25 @@ pesq
 rownames(pesq)<- c("obs1", "obs2","obs3","obs4","obs5")
 pesq
 
+#carregando arquivo csv
+?read.csv
 
+paciente= data.frame(read.csv(file= "E:\\Natanael\\tsi\\3periodo\\estatistica\\cap2\\2-Arquivos-Cap02\\pacientes.csv", header = T, sep = ";"))
+
+#visualizando dataset
+View(paciente)
+head(paciente)
+Summary.data.frame(paciente)
+#visualizando variável
+paciente$ID
+
+summary(paciente)
+#Histograma 
+A = as.numeric(paciente$ID) 
+hist(A)
+?summary
+factor(paciente)
+#combinando dataset
+d= merge(pesq,paciente)
+d
+paciente$Nome 

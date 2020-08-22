@@ -27,12 +27,10 @@ colnames(car2)=(c("nome","cor","motor","modelo")          )
 
 # Exercício 3 - Crie uma lista unindo o vetor e matriz criados anteriormente
 
-m = list(matrix)
-m
 
-unir =list(m,vetor)
-unir 
-
+unir =list(r,vetor)
+unir
+typeof(unir)
 # Exercício 4 - Usando a função read.table() leia o arquivo do link abaixo para uma dataframe
 # http://data.princeton.edu/wws509/datasets/effort.dat
 

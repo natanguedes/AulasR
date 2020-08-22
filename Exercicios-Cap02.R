@@ -11,13 +11,19 @@ getwd()
 
 # Exercício 1 - Crie um vetor com 30 números inteiros
 
-vetor = c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30)
+vetor = c(1,30)
 length(vetor)
-vetor.as
+
 # Exercício 2 - Crie uma matriz com 4 linhas e 4 colunas preenchida com números inteiros
 
-matrix = matrix(1:4,nrow = 4, ncol = 4)
-matrix
+car1 = c("nome","cor","motor","modelo")
+car1
+car2 = c("corsa", "azul","bmw" ,"A2")
+car3 = c("fusca", "rosa","chevrolet" ,"A3")
+car4 = c("vectar", "vermelhor","FORD" ,"A4")
+r =  rbind(car1,car2,car3,car4)
+r
+colnames(car2)=(c("nome","cor","motor","modelo")          ) 
 
 # Exercício 3 - Crie uma lista unindo o vetor e matriz criados anteriormente
 

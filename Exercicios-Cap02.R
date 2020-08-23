@@ -23,6 +23,7 @@ car3 = c("fusca", "rosa","chevrolet" ,"A3")
 car4 = c("vectar", "vermelhor","FORD" ,"A4")
 r =  rbind(car1,car2,car3,car4)
 r
+
 colnames(car2)=(c("nome","cor","motor","modelo")          ) 
 
 # Exercício 3 - Crie uma lista unindo o vetor e matriz criados anteriormente
@@ -34,11 +35,21 @@ typeof(unir)
 # Exercício 4 - Usando a função read.table() leia o arquivo do link abaixo para uma dataframe
 # http://data.princeton.edu/wws509/datasets/effort.dat
 
+df= read.table("http://data.princeton.edu/wws509/datasets/effort.dat")
+df
+
+df[,1]
 # Exercício 5 - Transforme o dataframe anterior, em um dataframe nomeado com os seguintes labels:
 # c("config", "esfc", "chang")
-
+colnames(df)=(c("config", "esfc", "chang")          ) 
+df
 # Exercício 6 - Imprima na tela o dataframe iris, verifique quantas dimensões existem no dataframe iris e imprima um resumo do dataset
+iris= data.frame(iris)
+#quantidade de linhas
+nrow(iris)
 
+#quantidade de colunas
+ncol(iris)
 # Exercício 7 - Crie um plot simples usando as duas primeiras colunas do dataframe iris
 
 # Exercício 8 - Usando a função subset, crie um novo dataframe com o conjunto de dados do dataframe iris em que Sepal.Length > 7

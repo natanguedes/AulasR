@@ -46,12 +46,13 @@ df
 # Exercício 6 - Imprima na tela o dataframe iris, verifique quantas dimensões existem no dataframe iris e imprima um resumo do dataset
 iris= data.frame(iris)
 #quantidade de linhas
-nrow(iris)
+x=nrow(iris)
 
 #quantidade de colunas
-ncol(iris)
+y=ncol(iris)
 # Exercício 7 - Crie um plot simples usando as duas primeiras colunas do dataframe iris
-
+  pie(x)
+plot(x,y)
 # Exercício 8 - Usando a função subset, crie um novo dataframe com o conjunto de dados do dataframe iris em que Sepal.Length > 7
 # Dica: consulte o help para aprender como usar a função subset()
 

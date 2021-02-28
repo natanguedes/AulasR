@@ -7,8 +7,7 @@
 # Coloque entre aspas o diretório de trabalho que você está usando no seu computador
 # Não use diretórios com espaço no nome
 setwd("C:/FCD/BigDataRAzure/Cap03")
-getwd()
-
+getwd() //
 # Dataset:
 # Berkeley Earth
 # http://berkeleyearth.org/data

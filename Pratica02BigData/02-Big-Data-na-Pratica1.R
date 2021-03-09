@@ -31,7 +31,7 @@ library(ggplot2)
 library(scales)
 library(data.table)
 
-
+url = "https://drive.google.com/open?id=1nSwP3Y0V7gncbnG_DccNhrTRxmUNqMqa"
 # Carregando os dados (Usando um timer para comparar o tempo de carregamento com diferentes funções)
 
 # Usando read.csv2()

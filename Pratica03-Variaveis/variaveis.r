@@ -1,4 +1,3 @@
-
 #variável qualitativas
 
 #ordinal

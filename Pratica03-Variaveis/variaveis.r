@@ -25,3 +25,13 @@ altura
 #numero de filhos
 filhos = c(1,3,5,7)
 filhos
+
+#variáveis qualitativas (categóricas)
+#nominal : profissão,sexo,religião
+#ordinal : escolaridade,classe social, fila
+
+#variáveis quantitativas contínuas: altura,peso,salário
+
+#variáveis quantitativas discretas: números de filhos,números de carros, número de acessos
+
+

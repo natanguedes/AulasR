@@ -55,3 +55,5 @@ filhos
 # – Variáveis discretas: a variável é avaliada em números que são resultados de contagens e, por isso, somente fazem sentido números inteiros. Exemplos: número de filhos, número de bactérias por litro de leite, número de cigarros fumados por dia.
 # 
 # – Variáveis contínuas: a variável é avaliada em números que são resultados de medições e, por isso, podem assumir valores com casas decimais e devem ser medidas por meio de algum instrumento. Exemplos: massa (balança), altura (régua), tempo (relógio), pressão arterial, idade.
+
+

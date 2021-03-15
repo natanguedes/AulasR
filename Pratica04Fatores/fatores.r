@@ -51,7 +51,6 @@ seg
 levels(segvet)<- c("MACHO","FERMEA") #ao inves de f e m coloca F=fermea e M = macho
 segvet
 summary(segvet)
-
 dados = c(1.3,2.3,4.5)
 datafator = factor(dados)
 datafator

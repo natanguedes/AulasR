@@ -20,6 +20,9 @@
 #tipo de fator
 #ordenado 
 #factor(...ord=T) ou ordened()
+#A classe factor serve para designar categorias para um vetor. Essa classe é semelhante a um vetor da classe character, mas tem importancia maior nas análises estatísticas já que designam um número finito (predefinido) de categorias. Tanto números quanto caracteres podem ser convertidos em fatores usando a função factor. Esses fatores podem não serem ordenados representado apenas diferentes categorias ou podem representar categorias ordenadas. A função ordered gera fatores ordenados, ou seja que as categorias tem diferentes níveis que são maiores uns que os outros.
+
+
 
 getwd()
 
@@ -56,4 +59,35 @@ datafator = factor(dados)
 datafator
 summary(datafator)
 summary(seg)
+
+#exemplo
+data = c(1,2,2,3,1,7,3,3,3,1,2,3,3,1)
+data
+ 
+#ALGARISMO ROMANO
+
+RDATA = factor(data, labels = c("I","II","III","iv"))
+RDATA
+
+set = c("AA","B","BA","CC","CA","AA","CC","CC")
+set
+
+
+#R criando niveis de hierarquia
+f.set = factor(set) 
+f.set
+
+
+
+f.set2 = factor(set)
+f.set2
+
+class(f.set)
+
+is.ordered(f.set2)
+
+
+
+#FATORES ORDENADOS
+
 

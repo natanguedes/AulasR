@@ -61,33 +61,49 @@ summary(datafator)
 summary(seg)
 
 #exemplo
-data = c(1,2,2,3,1,7,3,3,3,1,2,3,3,1)
+data = c(1,2,3,4,5)
 data
  
 #ALGARISMO ROMANO
 
-RDATA = factor(data, labels = c("I","II","III","iv"))
-RDATA
+RDATA = factor(data, labels = c("I","II","III","iv","V"), ordered =  T)
+RDATA 
 
-set = c("AA","B","BA","CC","CA","AA","CC","CC")
+set = factor(RDATA, levels = c("CA","BA","AA","CC","B"), ordered = T)
 set
 
-
-#R criando niveis de hierarquia
-f.set = factor(set) 
-f.set
-
+is.ordered(set) #pergunta se o fator é ordenado
+as.numeric(o.set)
+table(set)
 
 
-f.set2 = factor(set)
-f.set2
+getwd()
+install.packages("csv2")
+carregacsv = read.csv2("Pratica04Fatores/etnias.csv", sep=",")
+carregacsv
 
-class(f.set)
-
-is.ordered(f.set2)
-
-
-
-#FATORES ORDENADOS
+#variável do tipo fator é utilizado para variável categórica
 
 
+str(carregacsv)
+view(carregacsv)
+
+#Niveis de fatores
+#internamente o R armazena valores inteiros e faz um mapeamento para as
+#strings em ordem Alfabetica e agrupa as estatisticas por niveis . Agora, é possível visualizar a contabilização para cada categoria.
+levels(carregacsv$Etnia)
+summary(carregacsv$Etnia)
+ Idade1 <- c(21,22,24,18,19,27,22,22,23,21,23,21)
+
+boxplot(carregacsv, col="blue",  main = "idade por Etnia")
+#regressao
+#nao funciona
+lm(carregacsv )
+
+ Idade <- c(21,22,24,18,19,27,22,22,23,21,23,21)
+# Depois, podemos usar a função summary(variável) para verificar as medidas descritivas da variável
+ summary(Idade)
+ 
+Estado_Civil = factor(carregacsv$Estado_Civil, labels =  c("Casado","Solteiro","Divociado"))
+Estado_Civil 
+str(Estado_Civil)#variaveis com fator de tres niveis 0-Solteiro , 1-Casado e 2- Divociado

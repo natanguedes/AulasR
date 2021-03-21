@@ -15,3 +15,11 @@ df$cate
 cate
 df
 str(df) #parei no 02:33
+
+
+df$cate2 = factor(df$vec2, labels = c("Divociado","Casado","Solteiro"))
+df$cate2
+str(df)
+levels(df$cate2)  
+
+

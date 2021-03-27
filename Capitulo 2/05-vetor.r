@@ -87,4 +87,19 @@ vetorlong
  vetora - vetorb 
  vetora*vetorb 
 vetora/vetorb 
-#vetores operacao com vetores nomeados parte 2/2 em 00:36
+#somando vetores com numero diferentes de elementos
+alfa = c(10,20,30)
+alfa
+beta =  c(1,2,3,4,5,6,7,8,9)
+alfa+beta
+
+#vetor nomeado
+
+nome = c("NatanaEL", "GUEDES")
+nome
+
+names(nome) = c("Nome","Sobrenome")
+nome
+nome["Nome"]
+
+

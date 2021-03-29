@@ -66,3 +66,76 @@ t(t)
 
 #matriz inversa   
 solve(t)
+
+#matriz transposta
+
+w = matrix(c(2,4,6,8,10), nr=2)
+w
+
+t(w)
+
+#multiplicao de matrix
+
+a = matrix(c(2,4,5,6), nr = 2)
+a
+
+b= matrix(c(6,7,8,9), nr = 2)
+b
+
+a-b
+a+b
+a/b
+a*b
+
+#multiplicando matriz com vetor
+
+x = c(1:4)
+x
+
+y = matrix(c(2,4,6,8), nr = 2)
+y
+
+a = matrix(c(2,4,6,8), nr = 2)
+a+y
+a/b
+a*b
+a-b
+
+
+
+#multiplicando matriz com vetor
+
+y =  c(1:30)
+y
+
+x = matrix(c(2,3,4,5))
+x
+
+x+y
+
+#nomeando matrix
+t = matrix(c('Terra','Marte', 'Saturno','Neturno'), nr = 2)
+t
+
+
+dimnames(t) = (list(c("linha1","linha2"),c("coluna1","coluna2")))
+t
+
+#identificando linha e colunas no momento de criação da matriz
+matrix(c(1,2,3,4),  nr= 2, nc = 2,  dimnames = list(c("linha2","linha3")))
+
+
+#combinando matrizes
+
+mat4 = matrix(c(2,3,4,5), nr = 2)
+mat4
+
+mat5 = matrix(c(6,7,8,9), nr=2)
+mat5
+cbind(mat4,mat5)
+
+saiba = c(mat4,mat5)
+saiba
+
+c(mat4)
+mat4

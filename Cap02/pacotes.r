@@ -10,3 +10,5 @@ library(ggplot2)
 #descarrega pacote
 
 detach(package:ggplot2)
+
+getwd()

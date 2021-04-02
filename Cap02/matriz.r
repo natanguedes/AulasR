@@ -111,3 +111,4 @@ dimnames(matx1) = (list(c("linha1","linha2"), c("coluna1","coluna2")))
 matx1
 matx1[2]
 matx1[1:2]
+

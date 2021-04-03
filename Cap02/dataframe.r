@@ -32,9 +32,10 @@ df
 altura = c(1.25,2.35,5.67,2.48)
 altura
 
+pares = c(2,4,6,8,10,12)
 saida = cbind(df,altura)
 saida
-
+saida = cbind(df,pares)
 
 
 #informações do dataframe
@@ -66,15 +67,20 @@ ncol(df)
  #primeiros elementos do dataframe
 head(df)
 
-#ultimo elemento do dataframe
+#ultimo elemento do dataframa
 tail(iris)
 
-saida[idade>10,c('nomes')]
 saida[idade>10,]
-
-colnames(saida) = c("var1","var2","var3","var4","var5")
+saida[altura>=1.25]
+saida[idade>10,]
+saida[pares>2,]
+colnames(saida) = c("nomes","idades","carros","cores","altura")
 saida
 rownames(saida) = c("1","2","3","4")
-saida
+saida[c('cor')]
+
 
 ?mtcars
+
+
+cor

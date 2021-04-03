@@ -81,6 +81,8 @@ saida[c('cor')]
 
 
 ?mtcars
+#Links interessantes
 #https://r4ds.had.co.nz/
 
+#http://datascienceacademy.com.br/blog/linguagem-r-por-que-e-hora-de-aprender/
 cor

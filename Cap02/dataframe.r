@@ -1,37 +1,80 @@
 
 
-#criar dataframe vazio
+getwd()
+
+
+#vetor vazio
 
 df = data.frame()
-df
 class(df)
-df
-
-#criando vetores vazios
-
-nome = character()
-idades = numeric()
-itens = numeric()
-codigo = integer()
-
-df = data.frame(c(nome,idades,itens,codigo))
 df
 
 #criando vetores
 
-pais = c("Portugal","Espanha","Itália","Brasil")
-pais 
+nomes = character()
+idade = numeric()
+carros = character()
+cor = character()
+df = data.frame(c(nomes,idade,carros,cor))
 
-nome = c("Bruno","Thiago","Amanda","Bianca","Marta")
-nome
+#criando vetores
 
-altura = c(1.32,2.68,3.87,5.66)
+nomes = c("natanael","ferreira","rayssa","afonso")
+idade= c(22,55,77,47)
+carros = c("monza","vectar","chevette","fusca")
+cor = c("verde","vermelho","azul","cinza")
+
+df = data.frame(nomes,idade,carros,cor)
+df
+
+#adicionando mais uma coluna no dataframe
+
+altura = c(1.25,2.35,5.67,2.48)
 altura
 
-codigo = c(1001,1002,1003,1004)
-codigo
+saida = cbind(df,altura)
+saida
 
-#dataframe com vetores
-()
-data.frame(c(nome,altura))
-3
+
+
+#informações do dataframe
+
+str(df)
+dim(df)
+length(df)
+
+#obtendo vetor do dataframe
+
+df$nomes
+df$idade
+df$carros
+df$cor
+
+#extraindo um único valor
+
+saida[1,1]
+
+
+saida[1,2]
+
+
+#numeros de linhas e colunas
+
+nrow(df)
+ncol(df)
+
+ #primeiros elementos do dataframe
+head(df)
+
+#ultimo elemento do dataframe
+tail(iris)
+
+saida[idade>10,c('nomes')]
+saida[idade>10,]
+
+colnames(saida) = c("var1","var2","var3","var4","var5")
+saida
+rownames(saida) = c("1","2","3","4")
+saida
+
+?mtcars

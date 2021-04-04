@@ -86,3 +86,51 @@ saida[c('cor')]
 
 #http://datascienceacademy.com.br/blog/linguagem-r-por-que-e-hora-de-aprender/
 cor
+getwd()
+
+system.time(df)
+
+df = read.csv2("TemperaturasGlobais.csv", sep = ",")
+df
+
+#criando dados carregados
+
+df[]
+Brasil=subset(df, Country=="Brazil")
+Brasil = na.omit(Brasil)
+head(Brasil)
+
+
+#palmas
+
+plm = subset(df, Country=='Peru')
+plm = na.omit(plm)
+plm
+nrow(plm)
+ncol(plm)
+
+ggplot2(plm, aes(x = x,  y== AverageTemperatureUncertainty, color = as.factor(Year))) + geom_smooth(se = F, fill = NA, size = 2)+theme_light(base_size= 20) + xlab("Mês")+ ylab("Temperature") + scale_color_discrete("")+ggtitle("Temperature")+ theme(plot.title = element_size(size < 18))
+
+?`ggplot2-package`
+
+
+
+
+library(ggplot2)
+
+ggplot(mpg, aes(displ, hwy, colour = class)) + 
+  geom_point()library(ggplot2)
+
+ggplot(mpg, aes(displ, hwy, colour = class)) + 
+  geom_point()
+
+
+
+
+
+
+
+
+
+
+  

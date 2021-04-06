@@ -104,4 +104,4 @@ o.set
 is.numeric(o.set)
 table(o.set)
 
-#parou em 03:04
+#parou em 03:04 parte 3/3

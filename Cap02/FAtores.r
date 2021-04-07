@@ -105,3 +105,74 @@ is.numeric(o.set)
 table(o.set)
 
 #parou em 03:04 parte 3/3
+
+#fator e dataframe
+
+o.set = factor(f.set, levels = c("CA","BA","AA","CC","B"), ordered  = T)
+o.set
+
+df = read.csv2("Cap02/etnias.csv", sep = ",", stringsAsFactors = FALSE )
+df
+
+#regressão
+idade = as.numeric(df$Idade)
+idade
+etnia = as.numeric(df$Etnia)
+df$Etnia
+
+summary(lm(df$Idade-df$Etnia, data = df))
+#variavel do tipo fator
+
+
+v = c("Natanael","Guedes")
+v
+names(v)= c("Nome","Sobrenome")
+v
+
+A = df$Etnia
+
+nomes =df$Etnia
+
+names(nomes) =  c("1","2","2","3","1","1","3","2","2","1","1")
+nomes
+
+table(nomes)
+
+#Branco 1 , Pardo 2 , Negro 3
+
+df$Etnia
+
+v["Nome"]
+
+  
+
+str(df)
+?df
+
+levels(df$Etnia)
+summary(df$Etnia)
+
+#agora vamos fazer essas variaveis categoricas
+plot(df$Idade, xlab = 'Etnia', ylab = 'Idade', main = 'Idade por etnia')
+idade =df['Idade']
+idade = factor(idade)
+etnia = factor(etnia)
+etnia
+
+#summary 
+levels(df$Etnia)
+etnia = df['Etnia']
+summary(lm(idade-etnia), data == df)
+
+levels(df$Etnia)
+etnia
+
+#plot
+
+plot(df$Idade, xlab = 'Etnia', ylab = 'Idade', main = "Idade por Etnia")
+
+
+df[,6]
+df
+
+df$Estado_Civil

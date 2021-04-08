@@ -118,7 +118,7 @@ df
 idade = as.numeric(df$Idade)
 idade
 etnia = as.numeric(df$Etnia)
-df$Etnia
+etnia
 
 summary(lm(df$Idade-df$Etnia, data = df))
 #variavel do tipo fator
@@ -135,23 +135,27 @@ nomes =df$Etnia
 
 names(nomes) =  c("1","2","2","3","1","1","3","2","2","1","1")
 nomes
-
+typeof(nomes)
 table(nomes)
-
-#Branco 1 , Pardo 2 , Negro 3
-
+summary(lm(df$nomes-df$idade))
+           #Branco 1 , Pardo 2 , Negro 3
+nomes
+idade
+lm(nomes,idade)
 df$Etnia
 
 v["Nome"]
+df <- transform(df, z=c(1,2),  w=c(3,4))
 
-  
-
+df["EtniaNum"]<-c("0","mata B","mata B","mata A","mata B","mata B","matac","matac","mat8","mat6","mat9")
+df["area"]
+df
 str(df)
 ?df
-
+lm
 levels(df$Etnia)
 summary(df$Etnia)
-
+levels(df$Idade)
 #agora vamos fazer essas variaveis categoricas
 plot(df$Idade, xlab = 'Etnia', ylab = 'Idade', main = 'Idade por etnia')
 idade =df['Idade']
@@ -174,5 +178,27 @@ plot(df$Idade, xlab = 'Etnia', ylab = 'Idade', main = "Idade por Etnia")
 
 df[,6]
 df
+df1 <- as.numeric(as.character(df1))
 
-df$Estado_Civil
+etnia
+ df1char 
+df1 = df$Etnia
+df2 = df$Idade
+typeof(df1)
+typeof(df2)
+summary(lm(df1-df2))
+#mais exemplo
+ 
+data = c(1,2,3)
+data
+rdata = factor(data)
+rdata
+
+#transformando em romano 
+
+emromano = factor(data, labels= c("I","II","III","IV","V","VI"))
+emromano
+table(emromano)
+
+#fator não ordenado parou em fator e fatores ordenados
+@#$set = 

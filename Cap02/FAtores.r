@@ -200,5 +200,5 @@ emromano = factor(data, labels= c("I","II","III","IV","V","VI"))
 emromano
 table(emromano)
 
-#fator não ordenado parou em fator e fatores ordenados
+#fator não ordenado parou em fator e fatores ordenados 02:54
 @#$set = 

@@ -201,4 +201,61 @@ emromano
 table(emromano)
 
 #fator não ordenado parou em fator e fatores ordenados 02:54
-@#$set = 
+#$set = 
+  
+#fator nao ordenado 
+
+set3 = c("DD","AA","BA","CA","CC","B","B")
+set3  
+table(set3)
+is.ordered(set3)
+#TRANSFORMANDO DADOS
+f.set = factor(set2)
+f.set
+class(f.set)
+is.ordered(f.set)
+df(o.set)
+#fator ordenado
+o.set = factor(set2)
+o.set
+is.ordered(o.set)
+str(o.set)
+ 
+#fator e dataframe
+df = read.csv2("Cap02/etnias.csv", sep = ",")
+
+df
+table(df)
+
+levels(df$Etnia)
+summary(df$Etnia)
+df[0]
+
+#plot
+
+plot(df$Etnia, xlab = "Etnia", ylab = "Idade", main = "idade por Etnia")
+
+#regressao
+plot(df$Idade)
+df$Idade
+df$Etnia
+
+etnia = as.numeric(as.character(df$Etnia))
+
+
+df$Idade - df$NumEtnia
+
+df$Idade
+df$NumEtnia
+
+plot(df$Idade)
+Summary(lm(df$Idade-df$Etnia), data=df)
+
+plot(df$Idade~df$Idade)
+df$Idade-df$NumEtnia
+df$Idade
+df$NumEtnia
+
+plot(df$Idade-df$NumEtnia, data = df)
+
+plot(df$Idade~df$Etnia, xlab = "Etnia", ylab = "idade", main = "idade por etnia")

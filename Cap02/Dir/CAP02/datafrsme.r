@@ -60,7 +60,11 @@ tail(mtcars)
 
 #filtros
 
-pesq=(pes$nome, c('codigo'))
+pes[pes$nome, c('codigo')]
+table(pes)
+colnames(pes) = matrix(c("var1","var2","var3"))
+rownames(pes) = matrix(c(1,2,3))
+pes
+dim(pes)
 
-colnames(pes) = c("var1","var2","var3","var4")
-
+#continuar no dataframe parte 3/3

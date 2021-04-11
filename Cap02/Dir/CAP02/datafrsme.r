@@ -67,4 +67,30 @@ rownames(pes) = matrix(c(1,2,3))
 pes
 dim(pes)
 
-#continuar no dataframe parte 3/3
+#dataframe nomeados
+31
+
+
+pesq[altura>1.60]
+
+names(pes) = c("Pais","Nome","Altura","Código","Olhos")
+
+#carregando csv
+pacientes = data.frame(read.csv(file = "Cap02/Dir/CAP02/pacientes.csv"), head="T",sep=",")
+pacientes
+
+pacientes$Diabete
+pacientes$Status
+pacientes$Nome
+
+hist(pacientes$Idade)
+
+#visualizando dataset
+View(pacientes)
+head(pacientes)
+summary(pacientes)
+
+#combinando dataframe
+combina = merge(pacientes,pes)
+combina
+

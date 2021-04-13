@@ -35,7 +35,7 @@ library(data.table)
  
 getwd()
 # Usando read.table()
-df_teste2 <- read.csv2("TemperaturasGlobais.csv",sep=",")
+df_teste2 <- read.csv2("CAP03/TemperaturasGlobais.csv",sep=",")
 
 
 # Usando fread()

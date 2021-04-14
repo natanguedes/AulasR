@@ -107,3 +107,5 @@ system.time(x2b <- sqrt(x))
 
 identical(x2x, x2b)
 
+
+ 

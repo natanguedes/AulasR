@@ -79,8 +79,52 @@ escolas$Media
 escolas$Media = round(escolas$Media)
 escolas$Media
 escolas
-
 #tapply()
 ?gl
 
-tabela = data.frame(equipe = gl(5,5,labels = paste("Equipe",LETTERS[1:5]))), jogador = 
+tabela = data.frame(equipe = gl(5,5,labels = paste("Equipe",LETTERS[1:5])), jogador = sample(letters, 25), numcesta = floor(runif(25,min = )))
+View(tabela)
+tabela
+summary(tabela)
+tabela["numcesta"] = c(3,5,7,9,11) #adicionando dados a colunas
+?sqldf 
+#sqldf é um pacote R para executar instruções SQL em 
+#quadros de dados R, otimizado para conveniência.
+install.packages("sqldf")
+library(sqldf)
+sqldf("select equipe, sum(numcesta) from tabela group by equipe ")
+sqldf("select equipe, AVG(numcesta) from tabela group by equipe ")
+?tapply
+tapply(tabela$numcesta, tabela$equipe, sum) 
+tapply(tabela$numcesta, tabela$equipe, mean)
+
+?by
+
+dat = data.frame(species=c(rep(c(1,2,3), each=5)),
+                 petal.length=c(rnorm(5, 4.5,1),
+                                rnorm(5,4.5,1),
+                                rnorm(5,5.5,1)),
+                  petal.width=c(rnorm(5,2.5,1),
+                                rnorm(5,4,1),
+                                rnorm(5,4,1)))
+
+dat$species = factor(dat$species)
+dat$species
+View(dat)
+
+
+by(dat,dat$species, function(x){
+  mean.pl = mean(x$petal.length)
+})
+
+?lapply()
+
+l1 = list(a = c(1:10), b = c(45:37))
+l1
+lapply(l1, sum)
+sapply(l1, sum)
+
+?vapply
+
+
+vapply(l1, fivenum, c(Min = 0, "1stQu" = 0 , Median=0,"3rd Qu."=0, Max = 0))

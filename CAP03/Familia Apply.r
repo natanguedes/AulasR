@@ -128,3 +128,142 @@ sapply(l1, sum)
 
 
 vapply(l1, fivenum, c(Min = 0, "1stQu" = 0 , Median=0,"3rd Qu."=0, Max = 0))
+
+#replicate
+
+replicate(7, rnuif(10))
+?replicate
+
+
+
+
+
+
+
+y <- replicate(x, a.ind= 0:2, b.ind = 0:2, c.ind = 0:2)
+y
+#  Create a 3x3 supercell which might need to be wrapped (some molecules are ouside the cell)
+y <- replicate(x, a.ind= -1:1, b.ind = -1:1, c.ind = -1:1)
+y
+#  Create a layered supercell with a vacuum layer in the bc-plan
+y <- replicate(x, a.ind= c(0,2), b.ind = 0:2, c.ind = 0:2)
+y
+
+#mapply(),
+mapply(rep,1:4,4:1)
+?mapply
+
+
+replicate(7, runif(10))
+
+#mapply
+mapply(rep,1:4, 4:1)
+
+#rapply()
+l2 = list(lista)
+l2
+
+l1 = list(a = c(1:4), b=c(6:10)) 
+l1
+rapply(l2,sum, how = "list")
+
+#funçoes especiais unlist(), do.call(), strsplit()
+#produz um vetor com os elementos da lista
+?unlist()
+
+lst1 = list("A","B",15)
+lst1
+class(lst1)
+
+unlist(lst1) #TRANSFORMA A LISTA NUM VETOR
+
+vec1 = unlist(lst1)
+vec1
+class(vec1)
+
+
+lst = list(v1 = 6 , v2= list(381,2190), v3 = c(30, 217))
+lst
+class(lst)
+s=unlist(lst)
+s
+class(s)
+
+mean(unlist(s))
+round(mean(unlist(lst)))#calculando a média , unlist transforma em vetor e arredonda o valor round()
+
+#A FUNÇÃO DO.CALL APLICA UMA FUNÇÃO A CADA ELEMENTO DE UM OBJETO (SUBSTITUI O LOOP)
+?do.call #A FUNÇÃO do.call aplica uma função ao objeto inteiro e não a cada objeto individualmente
+
+help("do.call")
+help.search("do.call")
+help.start("do.call")
+#Atenção
+data = list()
+N=100
+for (data  in 1:N) {
+  #data[N] = data.frame(index= n, char = sample(letters,1) , z = rnorm(1)
+  sum(sapply(data, function(x) sum(N == head) ==100))
+                       
+   
+  
+}
+
+head(data)
+?rnbinom
+
+do.call(rbind.data)
+
+do.call(rbind,data)
+class(do.call(rbind,data))
+
+#lapply(y,sum)
+y = list(1:3, 4:6,7:8)
+y
+
+
+
+lapply(y, sum)
+do.call(rbind,data)
+
+#lapply() x do.call()
+
+l1= list(1:3, 4:6, 7:9)
+sum(l1)
+lapply(y,sum)
+?ldply
+
+install.packages("plyr")
+library(plyr)
+
+#divide a string em caracteres
+
+texto ="Data Science Academy"
+strsplit(texto,"")
+
+texto = "Data Science Academy"
+strsplit(texto, "")
+
+date = c("1990-04-23","2001-04-30","2001-04-23")
+date
+tmp =strsplit(date, "-")
+tmp
+class(tmp)
+
+#transforma lista em matriz
+matrix(unlist(tmp), nc = 3 , byrow = T)
+tmp
+names <- c("nATAN")
+class(names)
+typeof(names)
+tolower(names)
+
+#transforma lista em matriz
+
+matrix(unlist(tmp), nc=3,byrow= T)
+
+names <- c("Brian Sergey","Page Larry","Dorsey","Jack","Glass","Noah","williams","Evan","Stone","Biz")
+
+Cofounder = rep(c("Google","Twitter"), c(2,4))
+tmp = strsplit(names,",")
+tmp

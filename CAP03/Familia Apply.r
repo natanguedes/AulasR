@@ -267,5 +267,5 @@ names <- c("Brian Sergey","Page Larry","Dorsey","Jack","Glass","Noah","williams"
 Cofounder = rep(c("Google","Twitter"), c(2,4))
 tmp = strsplit(names,",")
 
-#parte 2/3 -funçoes especiais unlist do.call(), strsplit()
+#parte 2/3 -funçoes especiais unlist do.call(), strsplit() , 07:49
 tmp

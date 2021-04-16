@@ -268,4 +268,34 @@ Cofounder = rep(c("Google","Twitter"), c(2,4))
 tmp = strsplit(names,",")
 
 #parte 2/3 -funçoes especiais unlist do.call(), strsplit() , 07:49
+
+
 tmp
+
+
+frases = "Muitas vezes temos que repetir algo diversas vezes e essas diversas
+          vezes parecem algo estranho"
+frases
+
+palavras = strsplit(frases,"")[[1]]
+palavras
+
+unique(toupper(palavras))
+?unique
+antes 
+
+d=data.frame(attr= c(1.30,6), tipo = c('pao-com-agua','pao_e_agua_2'))
+d
+
+depois = strsplit(as.character(d$tipo ),"_e_")
+depois
+do.call(rbind,depois)
+install.packages("stringr")
+library(stringr)
+
+install.packages("dplyr")
+install.packages("tidyr")
+antes = data.frame(
+  attr = c(1,10,3,6),
+ tipo = c("pao_e_agua", "pao_e_agua_2")  
+)

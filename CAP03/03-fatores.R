@@ -58,3 +58,15 @@ data
 d = factor(data)
 d
 
+#fatores nao - ordenado
+
+vec = c("AA","B","BA","CC","CA","AA","BA","CC","CC")
+vec
+var = factor(vec, ordered =  T)
+var
+is.ordered(var)
+
+s=as.numeric(var)
+is.ordered(s)
+table(var)
+                #parou em 04:09 Fatores e Fatores ordenados parte 3/3

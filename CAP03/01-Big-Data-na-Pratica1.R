@@ -40,8 +40,7 @@ df_teste2 <- read.csv2("CAP03/TemperaturasGlobais.csv",sep=",")
 
 # Usando fread()
 ?fread
-
-read.table()#ler csv aqui
+#ler csv aqui
 
 # Criando subsets dos dados carregados
 cidadesBrasil <- subset(df_teste2, Country == 'Brazil')

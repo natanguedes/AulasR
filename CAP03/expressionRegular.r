@@ -131,10 +131,10 @@ force_tz(tml.lub, "Pacific/Auckland")
 
 
 #Gerando um dataframe de datas
-sono = data.frame(bad.time(c( ymd_hms("2011-09-01 02:11:03","2013-09-02 20:00:01")),
+sono = data.frame(timestamp(c( ymd_hms("2011-09-01 02:11:03","2013-09-02 20:00:01")),
                   c("2019-04-20 22:51:06","2013-09-04 20:00:31"),
 c("2019-03-04 21:01:20","2014-09-21 20:00:55"),c("2019-02-2001 12:23","2000-03-04 22:14:52"),c("2002-04-55 22:00:55")))
 sleep.time = dhours(c(6.74,7.96,7.01,6.21, 7.42, 6.45, 8.25))
-head(sono)
-                  
-                
+head(sono)                  
+      
+sono

@@ -53,20 +53,39 @@ summary(fatvec)
 
 
 #mais exemplo
-data = c(1,2,1,2,1,2,1)
+data = c(1,2,1,2,1,2,1,3)
 data
 d = factor(data)
-d
+d 
 
-#fatores nao - ordenado
+romanos = factor(data, labels = c("I","II","III"))
+romanos
+#fatores nao ordenado
 
-vec = c("AA","B","BA","CC","CA","AA","BA","CC","CC")
-vec
-var = factor(vec, ordered =  T)
-var
-is.ordered(var)
+set1 = c("AA","B","BA","CC","CA","AA","BA","CC","CC")
+set1
+f.set1 = factor(set1, ordered = T)
+f.set1
 
-s=as.numeric(var)
-is.ordered(s)
-table(var)
-                #parou em 04:09 Fatores e Fatores ordenados parte 3/3
+#fatores e dataframe
+
+df = read.csv2("CAP03/etnias.csv", sep = ",")
+is.ordered(f.set1)
+is.numeric(f.set1)
+
+#Variavel do tipo fator
+
+str(df)
+levels(df$Etnia)
+summary(df$Etnia)
+
+View(df)
+boxplot(df$Idade~df$numEtnia, xlab = "Etnia", ylab = "Idade", main =  "Idade por etnia")
+
+df$Idade-df$numEtnia
+summary(lm(df$Idade~df$numEtnia), data= df)
+
+str(df)
+
+df$Estado_Civil.cat = factor(df$Estado_Civil, labels = c("Solteiro","Casado","Divorciado"))
+df

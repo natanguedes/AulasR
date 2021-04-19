@@ -37,11 +37,17 @@ system.time(df_teste1 <- read.csv2("Cap02/TemperaturasGlobais.csv", sep = ","))
 
 
 # Usando read.table()
-system.time(df_teste2 <- read.table("Cap02/TemperaturasGlobais.csv")
+system.time(df_teste2 <- read.table("Cap02/TemperaturasGlobais.csv"))
 
- 
+
+# Usando fread()
+?fread
+system.time(df <- fread("TemperaturasGlobais.csv"))
+?fread()
+
+
 # Criando subsets dos dados carregados
-cidadesBrasil <- subset(df, Country == 'Brazil')
+cidadesBrasil <- subset(df_teste1, Country == 'Brazil')
 cidadesBrasil <- na.omit(cidadesBrasil)
 head(cidadesBrasil)
 nrow(df)
@@ -60,15 +66,13 @@ cidadesBrasil$Year <- year(cidadesBrasil$dt)
 
 # Palmas
 plm <- subset(cidadesBrasil, City == 'Palmas')
-plm <- subset(plm, Year %in% c(1796,1846,1896,1946,1996,2012))
+plm
+
 
 # Curitiba
 crt <- subset(cidadesBrasil, City == 'Curitiba')
-crt <- subset(crt, Year %in% c(1796,1846,1896,1946,1996,2012))
-
+crt
 # Recife
-recf <- subset(cidadesBrasil, City=='Recife')
-recf <- subset(recf,Year %in% c(1796,1846,1896,1946,1996,2012))
 
 
 # Construindo os Plots

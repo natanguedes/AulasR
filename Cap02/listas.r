@@ -69,3 +69,11 @@ v = c(1:5)
 v
 l = as.list(v)
 l
+
+#unindo 2 elementos em uma lista
+m = matrix(1:4, nr=2)
+m
+v = c(1:4)
+v
+lst = list(mat,v)
+lst

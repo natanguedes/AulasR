@@ -42,11 +42,16 @@ string1 ="eu sou uma string"
 string2 =" sou a segunda string"
 str_c(c(string1,string2), sep="")
 str_count(string1,"s")
-
+#localiza a primeira e a ultima posicao em que ocaracter aparece na string
 str_locate_all(string2,"s")
 
+
+#substitui a primeira ocorrencia de caracter
+str_replace(string2, "\\s","")
+replace(string1,"\\s","")
+
 string1 = "17 jan 2011"
-string2 = "1 jan 2001"
+string2 = "jan 20"
 padrao = "jan 20"
 
 grepl(pattern = padrao, x = string1)

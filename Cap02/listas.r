@@ -77,3 +77,6 @@ v = c(1:4)
 v
 lst = list(mat,v)
 lst
+
+
+

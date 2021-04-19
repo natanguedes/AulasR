@@ -80,7 +80,7 @@ rownames(pesq) = c("var1","var2","var3","var4","var5")
 colnames(pesq) = c("obs1","obs2","obs3","obs4","obs5")
 pesq
 getwd()
-pacientes = data.frame(read.csv(file = "Cap02/pacientes.csv", header = T, sep = ","))
+pacientes = data.frame(read.csv(file = "pacientes.csv", header = T, sep = ","))
 pacientes
 
 

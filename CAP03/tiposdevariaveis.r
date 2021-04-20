@@ -9,20 +9,20 @@ pie(slices,labels = lbls, col=rainbow(length(lbls)),
     main="Pie Chart of Countries")
 
 
-#VARIAVEL QUALITATIVA NOMINAL
+#VARIAVEL quantitativa continua
 
-peso = c(1,2)
-peso
-
+ 
 hist(peso, col= rainbow(3), main = "histograma de pesos")
 
-altura = c("Graduacao","Mestrado")
-altura
+ 
+ggplot(iris, aes(x = Sepal.Length)) +
+  geom_histogram(bins = 10) +
+  ggtitle("10 classes")
 
-freq= table(altura)
-freq
-hist(altura, col = rainbow(7))
-
+# Histograma com 30 classes:
+ggplot(iris, aes(x = Sepal.Length)) +
+  geom_histogram(bins = 30) +
+  ggtitle("30 classes")
 hist(altura)
 ordem
 ?barplot
@@ -30,11 +30,11 @@ y = c(7)
 a= c(10)
 x = c("Doutorado","Mestrado",a)
 
-# Gráfico de barras e setores.
+# Gráfico de barras e setores. variavel qualitativa ordinal
 package.install("ggplot2")
  library(ggplot2)
-df <- data.frame(escolaridade = c("Mestrado", "Graduação", "Doutorado"),
-                 tamanho = c(1.3, 1.9, 3.2))
+df <- data.frame(escolaridade = c("Fundamental", "Médio","Superior"),
+                 tamanho = c(1.9, 1.1, 3.2))
 
 # Boxplot
 ggplot(df, aes(y = tamanho, x = escolaridade)) +

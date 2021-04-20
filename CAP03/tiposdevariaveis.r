@@ -24,11 +24,7 @@ ggplot(iris, aes(x = Sepal.Length)) +
   geom_histogram(bins = 30) +
   ggtitle("30 classes")
 hist(altura)
-ordem
-?barplot
-y = c(7)
-a= c(10)
-x = c("Doutorado","Mestrado",a)
+ordem 
 
 # Gráfico de barras e setores. variavel qualitativa ordinal
 package.install("ggplot2")

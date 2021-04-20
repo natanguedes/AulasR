@@ -1,5 +1,5 @@
 
-#VARIAVEL QUALITATIVA NOMINAL DISCRETA
+#VARIAVEL QUANTITATIVA NOMINAL DISCRETA
 slices <- c(10, 12, 4, 16, 8)
 lbls <- c("US", "UK", "Australia", "Germany", "France")
 pct <- round(slices/sum(slices)*100)
@@ -10,9 +10,9 @@ pie(slices,labels = lbls, col=rainbow(length(lbls)),
 
 
 #VARIAVEL quantitativa continua
-
+peso = c(1.24,2.75,4.26,8.45,9.54)
  
-hist(peso, col= rainbow(3), main = "histograma de pesos")
+hist(peso, col= rainbow(5), main = "histograma de pesos")
 
  
 ggplot(iris, aes(x = Sepal.Length)) +

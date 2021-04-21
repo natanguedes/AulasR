@@ -52,7 +52,7 @@ summary(meufator)
 data = c(1,2,3,4,5,6)
 data
 dt = factor(data)
-dt
+dt$ 
 
 romano = factor(data, labels =c( "I","II","III","IV","V","VI"))
 romano
@@ -60,18 +60,18 @@ romano
 
 #CRIAR NIVEIS NAO SIGNIFICA HIERARQUIA
 
-SET1 = c("AA","BB","CC")
+ str(data)
+summary(data)
+data
+plot(data )
 
-SET1
-class(SET1)
-is.ordered(SET1)
-SET1
-factor(SET1)
-#FATOR ORDENADO
+#FATORES ORDENADO 
 
-a.set = factor(SET1, levels = c("BB","CC","AA"), ordered = T)
-a.set
+o.set = factor(set, levels = c("CA","BA","AA","CC","B"), ordered =  T)
+o.set
 
-ordered(a.set)
-a.set
+is.ordered(o.set)
+
+as.numeric(o.set)
+table(o.set)
 

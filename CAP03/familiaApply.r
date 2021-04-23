@@ -106,3 +106,16 @@ by(data, data$species, function(x){
 #parou em 06:19
 
 getwd()
+
+lista1 = list(a = c(1.5), b=c(6:10))
+lista1
+#replicate
+replicate(7, runif(10))
+
+mapply(rep,1:4,4:1)
+rapply(lis)
+
+
+
+rapply(lista1,sum)
+rapply(lista1,sum, how = "list")

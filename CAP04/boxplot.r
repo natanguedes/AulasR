@@ -30,10 +30,10 @@ barplot(cars, beside = T ,col = c("steelblue1","tan3","seagreen3") )
 legend("topright", pch = 1,col = c("steelblue1","tan3","seagreen3"), legend =  c("steelblue1","tan3","seagreen3") )
 
 
-t(cars)
 barplot(t(cars), beside = T, col = c("steelblue1","tan3","seagreen3"))
 legend("topright", pch = 1,col = c("steelblue1","tan3","seagreen3"), legend =  c("steelblue1","tan3","seagreen3") )
 
 
+t(cars)
 barplot(t(cars), beside = T, col = c("steelblue1","tan3","seagreen3","yellow1"))
         

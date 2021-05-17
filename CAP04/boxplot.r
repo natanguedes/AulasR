@@ -13,6 +13,7 @@ cars
 rownames(cars) <-c("jovem","adulto","idoso","TERCEIRA IDADE")
 cars
 
+colors()
 
 barplot(cars,  beside = T, legend =  c("steelblue1","tan3","seagreen3"))
 
@@ -33,3 +34,6 @@ t(cars)
 barplot(t(cars), beside = T, col = c("steelblue1","tan3","seagreen3"))
 legend("topright", pch = 1,col = c("steelblue1","tan3","seagreen3"), legend =  c("steelblue1","tan3","seagreen3") )
 
+
+barplot(t(cars), beside = T, col = c("steelblue1","tan3","seagreen3","yellow1"))
+        

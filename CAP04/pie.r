@@ -50,3 +50,6 @@ pie3D(pieval,labels=paises,main="Distribuição de vendas",explode = 0.05,
       col=c("red","blue","green",main="Distribuição de vendas"))
 
 
+
+pie3D(fatias,labels = paises, explode = 0.05,
+      col = c("steelblue1","tomato1","tan3"), main="Distribuição de Vendas")

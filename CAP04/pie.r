@@ -47,6 +47,6 @@ pieval<-c(2,4,6,8)
 
 # specify some new colors
 pie3D(pieval,labels=paises,main="Distribuição de vendas",explode = 0.05,
-      col=c("steelblue1","tomato2","tan3",main="Distribuição de vendas"))
+      col=c("red","blue","green",main="Distribuição de vendas"))
 
 

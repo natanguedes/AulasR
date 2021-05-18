@@ -5,7 +5,7 @@
 
 #criando fatias
 
-fatias = c(70,10,1)
+fatias = c(70,10,20)
 fatias
 
 paises = c("Brasil","Argentina","Rússia")
@@ -31,7 +31,7 @@ library(plotrix)
 pie(fatias, labels, explode=0.05, col =  c("steelblue1","tomato2","tan3"), main = "Distribuição de vendas")
 
 
-install.packages("plotrix")
+install.packages("plotrix").
 library(plotrix)
 
 pieval<-c(2,4,6,8)
@@ -52,4 +52,4 @@ pie3D(pieval,labels=paises,main="Distribuição de vendas",explode = 0.05,
 
 
 pie3D(fatias,labels = paises, explode = 0.05,
-      col = c("steelblue1","tomato1","tan3"), main="Distribuição de Vendas")
+      col = c("steelblue1","tomato2","tan3"), main="Distribuição de Vendas")

@@ -21,6 +21,6 @@ points(y, t, col=777, pch=9)
 
 #cria legenda
 
-legend(-6,5,9, legend = c("Nivel 1","Nivel 2","Nivel 3"), col =  c(123,"blue", 777), pch= c(10,4,9), cex =  0.69, bty =  "n")
+legend(-6.5,9, legend = c("Nivel 1","Nivel 2","Nivel 3"), col =  c(123,"blue", 777), pch= c(10,4,9), cex =  0.69, bty =  "n")
 
 

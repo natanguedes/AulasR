@@ -28,4 +28,6 @@ barplot(t(dados), beside = T, col =  c("steelblue1","tan3","seagreen3","peachpuf
 
 legend("topright",pch=1, beside= T, col=c("steelblue1","tan3","seagreen3","pearchpuff1") )
 
-arplot(t(dados),beside = T  , col = c("steelblue1","tan3","seagreen3","peachpuff1"))
+barplot(t(dados),beside = T  , col = c("steelblue1","tan3","seagreen3","peachpuff1"))
+
+

@@ -40,3 +40,19 @@ colors()
 #construindo um gráfico
 pie(fatias, labels = paises, col = c("blue","gainsboro","lemonchiffon4"), main = "Distribuição de vendas")
 
+
+#Trabalhando com dataframe
+?iris
+attach(iris)
+values = table(Species)
+labels = paste(names(values))
+pie(values, labels = paises, main = "Distribuição de Espécies")
+
+
+#pie 3D
+install.packages("plotrix")
+library(plotrix)
+pie3D(fatias, labels = paises, explode =  0.05, col =  c("steelblue1","tomato2","tan3"), main="Distribuição de Vendas")
+
+library(plotrix)
+pie3D(fatias, labels = paises, explode =  0.55, col =  c("steelblue1","tomato2","tan3"), main="Distribuição de Vendas")

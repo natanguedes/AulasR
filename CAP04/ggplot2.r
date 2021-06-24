@@ -241,6 +241,5 @@ ggplotly()
 sp + facet_wrap( ~ day, ncol = 2)
 ggplotly()
 
-
 ggplot(mpg, aes(displ, hwy)) + geom_point() + facet_wrap(~manufacturer)
 ggplotly()

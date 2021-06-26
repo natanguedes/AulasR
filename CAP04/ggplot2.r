@@ -65,3 +65,34 @@ ggplot(data, aes(x = var1, y = var2))+ geom_point(shape = 1 ) + geom_smooth(meth
 #BAR PLOT 
 
 #continuar..
+
+?barplot
+#preparando dados- número de casamentos de uma igreja
+dados = matrix(c(300,100,120,542,36,46,38,421,218,327,106,650), nr=3, byrow =  T)
+dados
+
+
+#nomeando linhas e colunas na matriz
+colnames(dados) = c("0","1-150","151-300",">300")
+rownames(dados) = c("Jovem","Adulto","Idoso")
+dados
+
+#construindo barplot
+
+barplot(dados, beside = T)
+barplot(dados)
+legend("topright", pch = 1, col = c("steelblue1","tan3","seagreen3"), legend = c("Jovem","Adulto","Idoso") )
+
+#CONSTRUINDO PLOT - STACKED BAR PLOT
+#AS 3 FAIXAS DE IDADE SÃO REPRESENTADAS NA MESMA COLUNAS PARA A DIFERENTES QUANTIDADES
+barplot(dados, col = c("steelblue1","tan3","seagreen3"))
+
+
+#criE UMA LEGENDA COM O GRÁFICO ANTERIOR
+colors()
+legend("topright", pch = 1, col= c("steelblue1","tan3","seagreen3"), legend =  c("Jovem","Adulto","Idoso"))
+
+
+barplot(dados, beside = T, col = c("steelblue1","tan3","seagreen3"))
+barplot(dados, beside = T, col = c("steelblue1","tan3","seagreen3","peachpuff1")  , legend =  c("Jovem","Adulto","Idoso"))
+

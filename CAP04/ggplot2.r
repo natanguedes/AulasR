@@ -52,47 +52,76 @@ class(myplot)
 print(myplot)
 
 
-#ScatterPlot com linha de regressão
+# scatterplot
+#Dados
+data = data.frame(cond = rep(c("Obs 1", "Obs 2"),
+each= 10), var1 = 1:100 + rnorm(100, sd=9),
+var2= 1:100 + rnorm(100, sd=16 ))
+
+ggplot(data, aes(x = var1, y = var2))+ geom_point(shape = 1 )+
+  geom_smooth(method= lm, color="red", se= F)
+
+#barplot
+data = data.frame(
+grupo = c(grupo = c("A","B","C","D"), 
+valor = c(33,62,56,67),
+valor = c(33,62,56,67), num_obs = c(100,500,459,342)))
+data = cumsum(data$num_obs) + 30 * c(0:(nrow(data)-1))
+
+
+#massa de dados
+
+data = data.frame(grupo = c("A","B","C","D"),
+                  valor = c(33,62,56,67), num_obs = c(100, 500,459,342))
+
+data$right = cumsum(data$num_obs)* 30 * c(0:(nrow(data)-1))
+data$left = data$right - data$num_obs
+
+#plot
+
+ggplot(data, aes(ymin=0)) + geom_rect(aes(xmin = left, xmax = right, ymax= valor, colour= grupo, fill= grupo) ) + xlab("Número de observações")+ ylab("valor")
+
+#usando  mtcars
+head(mtcars)
+#variavel continua à cor dos pontos
+ggplot(data = mtcars, aes(x = disp, y = mpg)) + geom_point()
+
+#mapear os tamanhos dos pontos à variável de interesse
+#A legenda é inserida automaticamente
+ggplot(mtcars, aes(x = disp, y = mpg, colour= cyl)) + geom_point()
+
+#os geoms definem qual forma geometrica será utilizada para a visualização dos dados no gráficos
+ggplot(mtcars,aes(x = as.factor(cyl), y = mpg)) + geom_boxplot()
+
+#Histograma
+ggplot(mtcars, aes(x = mpg), binwidth = 30)+ geom_histogram()
+
+
+#gráfico de barras
+
+ggplot(mtcars, aes(x = as.factor(cyl))) + geom_bar()
+
+
+#Personalizando  os gráficos
+
+ggplot(mtcars, aes(x = factor(cyl),y = mpg, colour = as.factor(cyl)))+geom_boxplot()
+
+ggplot(mtcars, aes(x = as.factor(cyl), y=mpg))+ geom_boxplot(color = "blue", fill= "seagreen" )
+
+#Podemos alterar os eixos
+
+ggplot(mtcars, aes(x = mpg))+ geom_histogram()+ xlab("Milhas de galão")+ ylab("Frequencia")
+
+#Legendas
+ggplot(mtcars, aes(x = as.factor(cyl), fill= as.factor(cyl))) + geom_bar() +labs(fill= "cyl")
+
+#trocando a posição da legenda
+ggplot(mtcars, aes(x = as.factor(cyl), fill = as.factor(cyl ))) + geom_bar() + labs(fill= "cyl" ) + theme(legend.position =  "top" )
+
+#sem legenda
+
+ggplot(mtcars, aes(x = as.factor(cyl), fill= as.factor(cyl))) + geom_bar() + guides(fill= F)
+
+#fACETS
+ggplot(mtcars, aes(x = mpg, y = disp, colour=as.factor(cyl ))) + geom_point()+ facet_grid(~am, )
  
-#DADOS
-data = data.frame(cond= rep(c("Obs1","Obs2"), each=10), var1 = 1:100 + rnorm(100, sd= 9 ), var2 = 1:100 + rnorm(100, sd= 16 ))
-
-#Plot
-
-ggplot(data, aes(x = var1, y = var2))+ geom_point(shape = 1 ) + geom_smooth(method =  lm, color= "red", se= F )
-
-
-#BAR PLOT 
-
-#continuar..
-
-?barplot
-#preparando dados- número de casamentos de uma igreja
-dados = matrix(c(300,100,120,542,36,46,38,421,218,327,106,650), nr=3, byrow =  T)
-dados
-
-
-#nomeando linhas e colunas na matriz
-colnames(dados) = c("0","1-150","151-300",">300")
-rownames(dados) = c("Jovem","Adulto","Idoso")
-dados
-
-#construindo barplot
-
-barplot(dados, beside = T)
-barplot(dados)
-legend("topright", pch = 1, col = c("steelblue1","tan3","seagreen3"), legend = c("Jovem","Adulto","Idoso") )
-
-#CONSTRUINDO PLOT - STACKED BAR PLOT
-#AS 3 FAIXAS DE IDADE SÃO REPRESENTADAS NA MESMA COLUNAS PARA A DIFERENTES QUANTIDADES
-barplot(dados, col = c("steelblue1","tan3","seagreen3"))
-
-
-#criE UMA LEGENDA COM O GRÁFICO ANTERIOR
-colors()
-legend("topright", pch = 1, col= c("steelblue1","tan3","seagreen3"), legend =  c("Jovem","Adulto","Idoso"))
-
-
-barplot(dados, beside = T, col = c("steelblue1","tan3","seagreen3"))
-barplot(dados, beside = T, col = c("steelblue1","tan3","seagreen3","peachpuff1")  , legend =  c("Jovem","Adulto","Idoso"))
-

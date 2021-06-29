@@ -124,4 +124,25 @@ ggplot(mtcars, aes(x = as.factor(cyl), fill= as.factor(cyl))) + geom_bar() + gui
 
 #fACETS
 ggplot(mtcars, aes(x = mpg, y = disp, colour=as.factor(cyl ))) + geom_point()+ facet_grid(~am, )
- 
+
+#plot diferentes juntos
+install.packages("gridExtra")
+library(gridExtra)
+
+#Dataset diamonds
+library(ggplot2)
+data("diamonds")
+
+# HistogramA plot1
+plot1<- qplot(price, data = diamonds, binwidth= 1000)
+plot1
+
+#Scatterplot como plot2
+
+plot2 = qplot(carat, price, data =  diamonds , binwidth=1000)
+plot2
+
+#COMBINA 2 PLOTS NA MESMA AREA
+grid.arrange(plot1,plot2, ncol=1)
+
+#grafico de densidade

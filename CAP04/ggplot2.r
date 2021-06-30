@@ -146,3 +146,29 @@ plot2
 grid.arrange(plot1,plot2, ncol=1)
 
 #grafico de densidade
+
+boxplot(data = diamonds, aes(x = price, group = cut, fill= cut))+ geom_density(adjust = 1.5 )
+  
+
+ggplot(data = diamonds, aes(x = price, group=cut, fill=cut)) + geom_density(adjust= 1.5)    
+
+
+ggplot(data =  diamonds, aes(x = price, group=cut, fill=cut))+ geom_density(adjust= 1.5, alpha= 0.2 )
+ggplot(data =  diamonds, aes(x = price, group=cut, fill=cut))+ geom_density(adjust= 1.5, position = "fill" )
+
+
+#parou em 0.35
+                                                                          
+ggplot(mtcars, aes(x = as.factor(cyl), y = mpg))+ geom_boxplot(color="blue", fill="seagreen4"  )  
+
+#Trocando a posição dA legenda
+ggplot(mtcars, aes(x = as.factor(cyl), fill= as.factor(cyl ))) + geom_bar()+ labs(fill= "cyl" ) + geom_bar() + theme(legend.position =  "top")
+
+
+#sem legenda
+
+#fACETS
+ggplot(mtcars,aes(x = mpg, y = disp, colour= as.factor(cyl)))+ geom_point()+facet_grid(am~.)
+ggplot(mtcars,aes(x = mpg, y = disp, colour= as.factor(cyl)))+ geom_point()+facet_grid(.~am)
+
+ 

@@ -1,65 +1,73 @@
+# Big Data na Prática 2 - Visualizações Interativas
 
-#Pratica VISUALIZAÇÕES interativa
+# Obs: Caso tenha problemas com a acentuação, consulte este link:
+# https://support.rstudio.com/hc/en-us/articles/200532197-Character-Encoding
 
-
+# Configurando o diretório de trabalho
+# Coloque entre aspas o diretório de trabalho que você está usando no seu computador
+# Não use diretórios com espaço no nome
+setwd("C:/FCD/BigDataRAzure/Cap04")
 getwd()
-install.packages('googleVis')
-install.packages(c("devtools","RJSONIO", "knitr", "shiny", "httpuv"))
 
-library(devtools)
-install_github("mages/googleVis",)
+# Baseado no Google Chart (visualização de dados na web)
+# googlevis é um pacote que fornece interface entre R e o Google Charts
+# Utiliza JavaScript e arquivos JSON. Os dados são transformados em formato JSON
+# O resultado é gerado em HTML5 ou Flash
+# Pode-se criar os mais variados tipos de gráficos e mapas. Inclusive Google Maps
+# Você pode incorporar os gráficos criados em páginas HTML ou apps
+# Verifique termos de uso, antes de utilizar
 
+install.packages("googleVis")
 library(googleVis)
-demo(googleVis)
+?googleVis
 
-df = data.frame(Pais = c("BR","CH","AR"), Exportacoes = c(10,13,14), Importacoes= c(23,32,32))
 
-#Grafico de linhas
-Line = gvisLineChart(df)
+# Criando um Datafrane
+df = data.frame(País = c("BR", "CH", "AR"), 
+                Exportações = c(10,13,14), 
+                Importações = c(23,12,32))
+
+
+# Gráfico de Linha
+Line <- gvisLineChart(df)
 plot(Line)
 
-,#Grafico de colunas
-coluna = gvisLineChart(df)
-plot(coluna)
+
+# Gráfico de Barras
+Column <- gvisColumnChart(df)
+plot(Column)
 
 
-#grafico de barras
-
-bar = gvisBarChart(df)
-
-#grafico de pizza
-pie = gisBarChart(df)
-plot(df)
-
-#Grafico de pizza
-
-pie = gisPieChart(CityPopularity)
-pie
-
-#Grafico de barras honrizontais
-bar = gvisBarChart(df)
-bar
-
-#graficos de barras horizontais
-
-bar = gvisBarChart(df)
-plot(bar)
+# Gráfico de Barras Horizontais
+Bar <- gvisBarChart(df)
+plot(Bar)
 
 
-#Grafico combinados
-Combo <- gvisComboChart(df,xvar = "Pais", yvar= c("Exportasções","Importações"), options =  list(seriesType = "bars", series= '{1: {type:"line"' ))
+# Gráfico de Pizza
+Pie <- gvisPieChart(CityPopularity)
+plot(Pie)
 
+
+# Gráficos Combinados
+Combo <- gvisComboChart(df, xvar = "País",
+                        yvar = c("Exportações", "Importações"),
+                        options = list(seriesType = "bars",
+                                       series='{1: {type:"line"}}'))
 plot(Combo)
 
-#scatter chart
-Scatter <-gvisScatterChart(women,
-                           options = list(options="none", lineWidth=2, pointSize=0, title="women",  vAxis="{title:'weigth (in)'}", width=300, heigth=300))
+
+# Scatter Chart
+Scatter <- gvisScatterChart(women, 
+                            options=list(
+                              legend="none",
+                              lineWidth=2, pointSize=0,
+                              title="Women", vAxis="{title:'weight (lbs)'}",
+                              hAxis="{title:'height (in)'}", 
+                              width=300, height=300))
 plot(Scatter)
 
 
-#BUBBLE
-
-
+# Bubble
 Bubble <- gvisBubbleChart(Fruits, idvar="Fruit", 
                           xvar="Sales", yvar="Expenses",
                           colorvar="Year", sizevar="Profit",
@@ -68,19 +76,66 @@ Bubble <- gvisBubbleChart(Fruits, idvar="Fruit",
 plot(Bubble)
 
 
-#Customizando
-M <- matrix(nr=6,nc=6)""
-M[col(M) == row(M)]<- 1:6
-dat <- data.frame(x=1:6, M)
-SC = gvisScatterChart(dat, options = list(title="Customizing points", legend="rigth", pointSize = 30, series="{0: (pointShape: 'cicle'), 1:{pointshape: 'triagle'}, 2:{pointShape: 'square'}, 3:{pointShape: 'diamond'}, 4:{pointShape: 'star'}, 5:{pointShape: polygon} "))
-
+# Customizando
+M <- matrix(nrow=6,ncol=6)
+M[col(M)==row(M)] <- 1:6
+dat <- data.frame(X=1:6, M)
+SC <- gvisScatterChart(dat, 
+                       options=list(
+                         title="Customizing points",
+                         legend="right",
+                         pointSize=30,
+                         series="{
+                         0: { pointShape: 'circle' },
+                         1: { pointShape: 'triangle' },
+                         2: { pointShape: 'square' },
+                         3: { pointShape: 'diamond' },
+                         4: { pointShape: 'star' },
+                         5: { pointShape: 'polygon' }
+                         }"))
 plot(SC)
 
-Gauge
 
-Gauge <- gvisGauge(CityPopularity, options = list(min=0, max=800, greenFrom=500, greenTo=800, yellowFrom=300, yellowTo=500,redFrom=0, redTo=100,  width=400, heigth=300))
+# Gauge
+Gauge <- gvisGauge(CityPopularity, 
+                   options=list(min=0, max=800, greenFrom=500,
+                                greenTo=800, yellowFrom=300, yellowTo=500,
+                                redFrom=0, redTo=300, width=400, height=300))
+plot(Gauge)
 
-plot(Gauge) 
+
+# Mapas
+Intensity <- gvisIntensityMap(df)
+plot(Intensity)
+
+
+# Geo Chart
+Geo=gvisGeoChart(Exports, locationvar="Country", 
+                 colorvar="Profit",
+                 options=list(projection="kavrayskiy-vii"))
+plot(Geo)
+
+
+# Google Maps
+AndrewMap <- gvisMap(Andrew, "LatLong" , "Tip", 
+                     options=list(showTip=TRUE, 
+                                  showLine=TRUE, 
+                                  enableScrollWheel=TRUE,
+                                  mapType='terrain', 
+                                  useMapTypeControl=TRUE))
+plot(AndrewMap)
+
+
+# Dados em Gráfico. Nível de analfabetismo nos EUA
+require(datasets)
+states <- data.frame(state.name, state.x77)
+GeoStates <- gvisGeoChart(states, "state.name", "Illiteracy",
+                          options=list(region="US", 
+                                       displayMode="regions", 
+                                       resolution="provinces",
+                                       width=600, height=400))
+plot(GeoStates)
+
 
 
 

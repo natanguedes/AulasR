@@ -168,3 +168,18 @@ str(df2) #verifica os tipos das variáveis e seus fatores
 saida = na.omit(df1)
 saida
 
+
+#importando / exportando
+write.csv(mtcars, file = "CAP05/exemplo.txt", sep = "|", col.names = NA, qmethod =  "double")
+list.files()
+
+s=read.table("cap05/exemplo.txt", sep = ",", header =  T)
+s
+
+mtcars = read.table("CAP05/exemplo.txt", sep = ",")
+
+mtcars
+
+mtcars = read.table("CAP05/exemplo.txt", sep = "|")
+mtcars = read.table("CAP05/exemplo.txt", sep = "|", encoding = "UTF-8-8")
+mtcars

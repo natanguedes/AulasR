@@ -135,3 +135,36 @@ head(dfcad)
 View(dfcad)
 
 #continuar parte 2
+
+search()
+dfPedido = read.table("CAP05/pedidos.txt", header = T, sep=",") 
+dfPedido
+dim(dfPedido)
+
+df1 = read.table("CAP05/Pedidos.txt", header =  T, sep ="," , col.names =  c("var1","var2","var3") )
+
+
+df1
+
+
+df1 =  read.table("CAP05/pedidos.txt", header =  T, sep=",", col.names = c("var1","var2","var3"), na.strings = c("Zico","Maradona")  )
+
+
+df1
+
+
+df2 = read.table("cap05/pedidos.txt", header = T, sep = ",", col.names = c("var1","var2","var3"), na.strings =  c("Zico","Maradona"), stringsAsFactors =  F)
+
+df2
+
+
+
+
+df2 = read.table("cap05/pedidos.txt", header = T, sep = ",", col.names = c("var1","var2","var3"), na.strings =  c("Zico","Maradona"), stringsAsFactors =  F)
+
+df2
+str(df2) #verifica os tipos das variáveis e seus fatores
+
+saida = na.omit(df1)
+saida
+
